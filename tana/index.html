@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ひと駅で第1話が読み終わる棚</title>
+<meta name="description" content="第1話が5,000字以内の作品だけを集めました。ひと駅ぶんで試して、合わなければ閉じられる。そのための棚です。">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="僕の世界">
+<meta property="og:title" content="ひと駅で第1話が読み終わる棚">
+<meta property="og:description" content="第1話が5,000字以内の作品だけを集めました。ひと駅ぶんで試して、合わなければ閉じられる。そのための棚です。">
+<meta property="og:url" content="https://0u0v.github.io/bokunosekai/tana/">
+<meta property="og:image" content="https://0u0v.github.io/bokunosekai/card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="夜の森で焚き火のそばに座る旅人">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ひと駅で第1話が読み終わる棚">
+<meta name="twitter:description" content="第1話が5,000字以内の作品だけを集めました。ひと駅ぶんで試して、合わなければ閉じられる。そのための棚です。">
+<meta name="twitter:image" content="https://0u0v.github.io/bokunosekai/card.png">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9A%3C/text%3E%3C/svg%3E">
+
+<!--
+  ════════════════════════════════════════════════
+  ★★★ 8/20に直すのは2か所だけ ★★★
+  　(1) 下の「リンク」に、カクヨムとエブリスタのURLを貼る
+  　(2) ボタンの中の <span class="when">8月20日から</span> を2つとも消す
+  　　　（残ると嘘になる。URLを入れると押せるようになるので、その日から要らない）
+  ════════════════════════════════════════════════
+-->
+<script>
+  const リンク = {
+    カクヨム:   "",   // ← ★カクヨムの自主企画（本棚）のURLをここに貼る
+    エブリスタ: ""    // ← ★エブリスタの掲示板トピックのURLをここに貼る
+  };
+</script>
+
+<style>
+  :root {
+    color-scheme: dark;
+    --night:   #080c14;
+    --lift:    #111a2a;
+    --line:    #263349;
+    --paper:   #f0ebe0;
+    --dim:     #8590a6;
+    --flame:   #dcae55;
+
+    --maru: "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ ProN W4",
+            "Hiragino Maru Gothic Pro", "Noto Sans JP",
+            "Yu Gothic Medium", "Meiryo", system-ui, sans-serif;
+
+    /* ★★**一文＝一行**にするための字の大きさ（2026-08-12。0u0さん指示）。
+       　いちばん長い文＝「ひと駅ぶんで試して、合わなければ閉じられる。」＝21.9文字ぶん。
+       　**画面の幅から左右の余白を引いて、その文字数で割る。**こうすると
+       　どの幅でも折り返さない（狭い機種では字が小さくなるだけ）。
+       　24rem は main の最大幅。これ以上広い画面では大きくしない。 */
+    --hitogyo:  min(calc((100vw - 2.9rem) / 23.2), calc((24rem - 2.9rem) / 23.2));
+    --midashi:  min(calc((100vw - 2.9rem) / 14.1), 1.45rem);
+  }
+
+  * { box-sizing: border-box; }
+  html { background: var(--night); }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(90% 50% at 50% 0%, #16223a 0%, #080c14 70%),
+      var(--night);
+    color: var(--paper);
+    font-family: var(--maru);
+    /* ★★丸ゴは細いまま使う。600を当てるとiPhoneが太らせて字がつぶれる（2026-08-12） */
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* ★焚き火の灯り。ゆっくり明るくなってから、かすかに息をする */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -20% -20% auto;
+    height: 60vh;
+    background: radial-gradient(50% 60% at 50% 0%, rgba(220,174,85,.16) 0%, transparent 70%);
+    opacity: 0;
+    pointer-events: none;
+    animation: tomoru 2.6s .1s both, yuragi 7s 2.6s ease-in-out infinite;
+  }
+  @keyframes tomoru { to { opacity: 1; } }
+  @keyframes yuragi { 0%,100% { opacity: 1; } 50% { opacity: .72; } }
+
+  main {
+    position: relative;
+    width: 100%;
+    max-width: 24rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+    /* ★左右＝一文を一行に収めるぶん詰めた。
+       ★下＝**中身をすこし上へ置く。**ど真ん中に置くと、下の「僕の世界」との間が空いて
+       　　沈んで見える（2026-08-12・0u0さん指摘）。下の余白を厚くすると中身が上がる。 */
+    padding: 2rem 1.3rem 6.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* ★「題＋説明」と「ボタン＋注」の間だけ広く取る。
+       　ここが他と同じ幅だと、どれも同じ重さに見えて散らかる（2026-08-12） */
+    gap: clamp(2.2rem, 5.4vh, 2.9rem);
+  }
+
+  .top { width: 100%; }
+
+  .title {
+    margin: 0;
+    /* ★★**1行に収める。**題が割れると看板が2つに見える（2026-08-12） */
+    font-size: var(--midashi);
+    white-space: nowrap;
+    font-weight: 500;          /* ★丸ゴは太らせない */
+    letter-spacing: 0;         /* ★日本語に字間をかけない（0u0さんの決まり） */
+    line-height: 1.6;
+    animation: rise 1.5s .25s both;
+  }
+
+  /* ★★説明は**一文＝一行。**途中で折ると意味の切れ目が分からなくなる（2026-08-12・0u0さん指示） */
+  .lines {
+    margin: 1.6rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;                /* ★下の2文は続きなので近づける */
+    font-size: var(--hitogyo);
+    font-weight: 400;
+    line-height: 1.75;
+    animation: rise 1.7s .75s both;
+  }
+  .lines p { margin: 0; white-space: nowrap; }
+  /* ★1文目は「何の棚か」。2〜3文目は「どう使うか」。**2つのかたまりに見えるよう間を空ける** */
+  .lines p:first-child { margin-bottom: .45rem; }
+  .lines .fade { color: var(--dim); }
+
+  /* ★★折り返しは「文節のかたまり」でだけ起こす（2026-08-12）。
+     　自動に任せると「集めた棚で／す。」のように途中で切れる。
+     　かたまりを inline-block にすると、**かたまりの中では折れない。** */
+  .w { display: inline-block; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(.55rem); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+
+  .bottom { width: 100%; }
+
+  .doors { display: flex; flex-direction: column; gap: .65rem; }
+
+  .door {
+    display: block;
+    padding: .8rem 1rem;
+    line-height: 1.5;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--lift);
+    color: var(--paper);
+    text-decoration: none;
+    font-size: .98rem;
+    font-weight: 500;          /* ★丸ゴは太らせない */
+    transition: border-color .25s, background .25s, color .25s, transform .25s;
+    /* ★リンクは待たせない（0u0さんの決まり）。出るのだけ少しやわらげる */
+    animation: fadein .8s .1s both;
+  }
+  .door:hover, .door:focus-visible {
+    border-color: var(--flame);
+    background: #17233a;
+    color: var(--flame);
+    transform: translateY(-2px);
+  }
+  .door:focus-visible { outline: 2px solid var(--flame); outline-offset: 3px; }
+
+  /* ★URLがまだ無いとき。押せない見た目にして、いつ開くかを出す */
+  .door.soon {
+    color: var(--dim);
+    border-style: dashed;
+    background: transparent;
+    cursor: default;
+    pointer-events: none;
+  }
+  .door.soon .when { font-weight: 400; font-size: .76rem; opacity: .8; }
+
+  /* ★書く人向け。読む人の邪魔をしないよう、ボタンの下に小さく */
+  .note {
+    margin: 1.9rem 0 0;        /* ★ここから先は「書く人」向け。ボタンから離す */
+    font-size: .77rem;
+    font-weight: 400;
+    line-height: 1.95;
+    color: var(--dim);
+    animation: fadein 1.4s 1.5s both;
+  }
+
+  .foot {
+    position: absolute;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: clamp(1.2rem, 3.5vh, 2rem);
+    margin: 0;
+    font-size: .74rem;
+    color: var(--dim);
+  }
+  .foot a { color: var(--dim); }
+
+  @media (prefers-reduced-motion: reduce) {
+    body::before, .title, .lines, .door, .note { animation: none; opacity: 1; }
+    .door { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <div class="top">
+    <h1 class="title">ひと駅で第1話が読み終わる棚</h1>
+
+    <div class="lines">
+      <p>第1話が5,000字以内の作品だけを集めました。</p>
+      <p class="fade">ひと駅ぶんで試して、合わなければ閉じられる。</p>
+      <p class="fade">そのための棚です。</p>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <nav class="doors">
+      <a class="door soon" id="kakuyomu" href="#">カクヨムの本棚へ<br><span class="when">8月20日から</span></a>
+      <a class="door soon" id="estar" href="#">エブリスタの掲示板へ<br><span class="when">8月20日から</span></a>
+    </nav>
+
+    <p class="note">
+      <span class="w">書く方へ。</span><span class="w">参加はそれぞれのページから。</span><br>
+      <span class="w">条件は</span><span class="w">「第1話が5,000字以内」</span><span class="w">だけです。</span><br>
+      <span class="w">ジャンル・完結・長さ・</span><span class="w">書いてきた年数は</span><span class="w">問いません。</span>
+    </p>
+  </div>
+
+  <p class="foot"><a href="../">僕の世界</a></p>
+</main>
+
+<script>
+  // ★上の「リンク」に入れたURLを、そのままボタンへ流し込むだけ。
+  //   空のときは何もしない＝「準備中」の見た目のまま。
+  (function () {
+    const 差す = (id, url) => {
+      const a = document.getElementById(id);
+      if (!a || !url) return;
+      a.href = url;
+      a.classList.remove("soon");
+      a.target = "_blank";
+      a.rel = "noopener";
+      const w = a.querySelector(".when");
+      if (w) w.remove();
+    };
+    差す("kakuyomu", リンク.カクヨム);
+    差す("estar", リンク.エブリスタ);
+  })();
+
+  // ★★保険＝**一文が一行に収まっているか、その機種の字で測って確かめる。**
+  //   上のCSSは「1文字＝1em」で見積もっているが、丸ゴシックが無い機種では
+  //   幅が少し変わる。**はみ出したときだけ**、そのぶん小さくする（足りていれば何もしない）。
+  (function () {
+    const 枠 = document.querySelector("main");
+    const 字幅 = el => { const r = document.createRange(); r.selectNodeContents(el); return r.getBoundingClientRect().width; };
+    const 合わせる = () => {
+      const 使える = 枠.clientWidth - parseFloat(getComputedStyle(枠).paddingLeft) * 2;
+      const 題 = document.querySelector(".title");
+      題.style.fontSize = "";
+      const t = 字幅(題);
+      if (t > 使える) 題.style.fontSize = parseFloat(getComputedStyle(題).fontSize) * (使える / t) * .99 + "px";
+
+      const 箱 = document.querySelector(".lines");
+      箱.style.fontSize = "";
+      let 比 = 1;
+      箱.querySelectorAll("p").forEach(p => { const w = 字幅(p); if (w > 使える) 比 = Math.min(比, 使える / w); });
+      if (比 < 1) 箱.style.fontSize = parseFloat(getComputedStyle(箱).fontSize) * 比 * .99 + "px";
+    };
+    合わせる();
+    addEventListener("resize", 合わせる);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(合わせる);
+  })();
+</script>
+
+</body>
+</html>
