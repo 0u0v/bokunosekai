@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>移動します</title>
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="2; url=https://0u0v.github.io/bokunosekai/">
+<style>
+  html,body{margin:0;height:100%;background:#080c14;color:#8590a6;
+    font-family:"Hiragino Maru Gothic ProN","Noto Sans JP","Yu Gothic Medium",system-ui,sans-serif;
+    display:flex;align-items:center;justify-content:center;font-size:.85rem}
+</style>
+</head>
+<body>
+<p>移動します…<br><a href="https://0u0v.github.io/bokunosekai/" style="color:#dcae55">開かないときはこちら</a></p>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "50f1e1ef4bb94cf492dbb7e8dbb6b6f7"}'></script><!-- End Cloudflare Web Analytics -->
+<script>
+/* ★★★**新作から僕の世界へ来た人を数えるための中継**（0u0GO 2026-08-25）＝
+   ◆**なぜ要るか**＝新作も僕の世界も**同じカクヨム／なろう**に置くので、
+     入り口サイトの「どこから来たか」では **両方とも『カクヨムから』**に入って区別がつかない。
+     新作の狙いは**集客（新作から僕の世界へ流すこと）**なので、
+     **そこが効いているかどうかが、いちばん見たい数字。**
+   ◆★**参照元ではなく「通った道」で分ける。**この1枚を通った人だけが別に数えられる。
+   ◆★★**作品が増えたら n2.html・n3.html と足す**（中身は行き先も含めて同じでよい）。
+     **道具の側は `go/nN.html` をまとめて「新作から」1つに足す**ので、
+     **足しても台帳の指標名は増えない**（名前が際限なく増えると、来なくなった先で
+     「26時間取れていない」が鳴る＝入り口のJSに同じ理由が書いてある）。
+   ★★**ビーコンが飛んでから転送する**（他の中継と同じ作り。0秒で飛ばすと1回も数えられない）。
+   ★**1秒で打ち切る保険**＝ビーコンが落ちた人をこの画面に置き去りにしない。
+   ★head の `meta refresh` は**2秒**＝JSが動かない人の保険。 */
+(function () {
+  var 行き先 = "https://0u0v.github.io/bokunosekai/", 済み = false;
+  function 行く() { if (済み) return; 済み = true; location.replace(行き先); }
+  var 印 = document.querySelector("script[data-cf-beacon]");
+  if (印) {
+    印.addEventListener("load", function () { setTimeout(行く, 150); });
+    印.addEventListener("error", 行く);
+  }
+  setTimeout(行く, 1000);
+})();
+</script>
+</body>
+</html>
