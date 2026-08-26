@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>五年で三十二回毒を呑まされた婚約者ですが、婚約破棄されたので今後の毒見はご自分でどうぞ</title>
+<meta name="description" content="毒見役を解雇した王宮では、今日も誰も食事ができない。 小説家になろう・カクヨム・エブリスタで同時掲載。">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="五年で三十二回毒を呑まされた婚約者ですが、婚約破棄されたので今後の毒見はご自分でどうぞ">
+<meta property="og:title" content="五年で三十二回毒を呑まされた婚約者ですが、婚約破棄されたので今後の毒見はご自分でどうぞ">
+<meta property="og:description" content="毒見役を解雇した王宮では、今日も誰も食事ができない。 小説家になろう・カクヨム・エブリスタで読めます。">
+<meta property="og:url" content="https://0u0v.github.io/bokunosekai/n1/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="五年で三十二回毒を呑まされた婚約者ですが、婚約破棄されたので今後の毒見はご自分でどうぞ">
+<meta name="twitter:description" content="毒見役を解雇した王宮では、今日も誰も食事ができない。 小説家になろう・カクヨム・エブリスタで読めます。">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%BD%EF%B8%8F%3C/text%3E%3C/svg%3E">
+
+<style>
+  /* ★★★**形は「僕の世界」の入り口とまったく同じ。変えたのは文字と色だけ**（0u0指示 2026-08-25
+     「フォーマットは僕の世界と同じで文字と色を変えるだけにしようね」）＝
+     　◆組み方・class名・余白・動き（rise / fade）・foot の位置は**1つも変えていない。**
+     　◆**色の役割も同じまま入れ替えただけ**＝night=地／lift=ボタンの地／line=枠／
+     　　paper=文字／dim=薄い文字／flame=差し色。**名前も残してある**（見比べやすいように）。
+     　◆★**font-size は題だけ小さくした。**僕の世界の題は4字、こちらは43字あるので、
+     　　同じ大きさだと画面からはみ出す。**文字が変わったぶんの調整で、形の変更ではない。**
+     ★★**毒っぽい緑・紫は使わない**（新作担当の指定）＝中身はざまぁと溺愛で、読後感は甘い。
+     ★★**色で意味を分けていない**＝押す先はどれもサイト名が文字で書いてある。 */
+  :root {
+    color-scheme: light;
+    --night:   #f7f1e6;
+    --lift:    #fffdf8;
+    --line:    #e4d6c2;
+    --paper:   #2b2320;
+    --dim:     #857468;
+    --flame:   #8f2f3f;
+
+    --maru: "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ ProN W4",
+            "Hiragino Maru Gothic Pro", "Noto Sans JP",
+            "Yu Gothic Medium", "Meiryo", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { background: var(--night); }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(90% 50% at 50% 0%, #fffaf1 0%, #f7f1e6 70%),
+      var(--night);
+    color: var(--paper);
+    font-family: var(--maru);
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: center;
+  }
+
+  main {
+    position: relative;
+    width: 100%;
+    max-width: 24rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 2rem 1.9rem 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: clamp(2.4rem, 7vh, 3.4rem);
+  }
+
+  .top { width: 100%; }
+
+  .title {
+    margin: 0;
+    /* ★僕の世界は clamp(1.95rem, 8.4vw, 2.35rem)。題が4字と43字で違うので、ここだけ下げた */
+    font-size: clamp(1.05rem, 4.6vw, 1.3rem);
+    font-weight: 600;
+    letter-spacing: .04em;
+    line-height: 1.75;
+    animation: rise 1.4s .1s both;
+  }
+  /* ★★★**題は「意味の切れ目」でしか折り返さない**（0u0指摘 2026-08-25「綺麗になんか区切った方が良くない？」）＝
+     ◆**そのままだと語の途中で切れる。**実測＝「…婚約／者ですが、…今後／の毒見は」で切れていた。
+     ◆★**改行を打ち込まない**（`<br>` で固定すると、狭い画面でも広い画面でも同じ場所で切れて、
+     　どちらかで必ず不格好になる）。→ **かたまりを inline-block にして、切れ目を「かたまりの間」だけにする。**
+     　入るところまで1行に並び、入らなくなったら**次のかたまりから**次の行へ落ちる。
+     ◆★僕の世界の題は4字なので折り返さない。**こちらの題が43字だから要るもの**で、形の変更ではない。 */
+  .title span { display: inline-block; }
+
+  .catch {
+    margin: 1.3rem 0 0;
+    font-size: clamp(.95rem, 4.4vw, 1.1rem);
+    font-weight: 500;
+    line-height: 2.05;
+    color: var(--paper);
+    animation: rise 1.6s .6s both;
+  }
+  .catch .fade { color: var(--dim); }
+
+  .author {
+    margin: 1.2rem 0 0;
+    font-size: .8rem;
+    color: var(--dim);
+    animation: fade 1.4s 1.4s both;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(.5rem); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
+  .bottom { width: 100%; }
+
+  .doors {
+    display: flex;
+    flex-direction: column;
+    gap: .65rem;
+  }
+
+  .door {
+    display: block;
+    padding: .95rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--lift);
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: border-color .25s, background .25s, color .25s, transform .25s;
+  }
+  .door:hover, .door:focus-visible {
+    border-color: var(--flame);
+    background: #fbf2ee;
+    color: var(--flame);
+    transform: translateY(-2px);
+  }
+  .door:focus-visible { outline: 2px solid var(--flame); outline-offset: 3px; }
+
+  .foot {
+    position: absolute;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: clamp(1.4rem, 4vh, 2.2rem);
+    margin: 0;
+    font-size: .74rem;
+    color: var(--dim);
+  }
+  .foot b { font-weight: 600; color: var(--paper); font-variant-numeric: tabular-nums; }
+  .foot .sep { opacity: .45; padding: 0 .5em; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .title, .catch, .author { animation: none; }
+    .door { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <div class="top">
+    <h1 class="title"><span>五年で三十二回毒を呑まされた</span><span>婚約者ですが、</span><span>婚約破棄されたので</span><span>今後の毒見はご自分でどうぞ</span></h1>
+
+    <p class="catch">
+      毒見役を解雇した王宮では、<br>
+      <span class="fade">今日も誰も食事ができない。</span>
+    </p>
+
+    <p class="author">0u0</p>
+  </div>
+
+  <div class="bottom">
+    <nav class="doors">
+      <a class="door" href="go/narou.html">小説家になろう</a>
+      <a class="door" href="go/kakuyomu.html">カクヨム</a>
+      <a class="door" href="go/estar.html">エブリスタ</a>
+    </nav>
+  </div>
+
+  <p class="foot">どこで読んでも同じ本文<span class="sep">／</span><b>全4話</b>・完結済み</p>
+</main>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "50f1e1ef4bb94cf492dbb7e8dbb6b6f7"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
