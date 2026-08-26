@@ -96,9 +96,22 @@
   }
   @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
 
-  .bottom { width: 100%; display: flex; flex-direction: column; gap: 1.9rem; }
+  /* ★枠で囲んだぶん、作品と作品のあいだは詰めてよい（枠が切れ目を作っている） */
+  .bottom { width: 100%; display: flex; flex-direction: column; gap: 1.35rem; }
 
-  .work { animation: rise 1.5s .8s both; }
+  /* ★★★**作品ごとに枠で囲む**＝囲まないと、**題とボタンの距離**と
+     　**作品と作品の距離**がほぼ同じになり、**どのボタンがどの作品のものか目で切れない。**
+     　◆位置と余白だけで見せる手もあるが、**作品が増えるほど弱くなる。**枠は増えても効く。
+     　◆★**色では分けない**＝色に意味を持たせると、見分けにくい人に届かない。
+     　　枠と地の明るさだけで塊にする。
+     ★地はボタン（--lift）より暗くする＝**枠の中でボタンが浮いて見える**ようにするため。 */
+  .work {
+    padding: 1rem 1rem 1.05rem;
+    border: 1px solid var(--line);
+    border-radius: 1.1rem;
+    background: #0e1523;
+    animation: rise 1.5s .8s both;
+  }
   .work + .work { animation-delay: 1s; }
 
   .wname {
@@ -114,7 +127,7 @@
   .wname span { display: inline-block; }
 
   .wnote {
-    margin: .45rem 0 .8rem;
+    margin: .4rem 0 .7rem;
     font-size: .76rem;
     color: var(--dim);
     font-variant-numeric: tabular-nums;
@@ -211,10 +224,18 @@
   /* ★★**背の低い画面では余白から詰める**＝このページの値打ちは「1画面で全部見えること」。
      　字やボタンを小さくする前に、まず余白を削る（読みやすさは落とさない）。 */
   @media (max-height: 700px) {
-    main { padding: 1.6rem 1.5rem 3.2rem; gap: 1.4rem; }
-    .bottom { gap: 1.3rem; }
-    .catch { margin-top: .7rem; line-height: 1.8; }
-    .wnote { margin: .35rem 0 .6rem; }
+    main { padding: 1.1rem 1.4rem 2.6rem; gap: 1rem; }
+    .title { font-size: 1.7rem; }
+    /* ★★**背が足りない回は、説明の一行を落とす**＝「読める場所の一覧です。」は
+       　題（0u0）と、その下の作品名・サイト名で読み取れる。**削っても意味は減らない。**
+       　★削る順は「無くても意味が通るもの」から。ボタンと作品名には手を付けない。 */
+    .catch { display: none; }
+    .bottom { gap: .9rem; }
+    .work { padding: .75rem .85rem .8rem; border-radius: .9rem; }
+    .wnote { margin: .3rem 0 .55rem; }
+    .door { padding: .68rem .3rem; }
+    .maru { width: 2.4rem; height: 2.4rem; }
+    .maker p { margin-bottom: .5rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
