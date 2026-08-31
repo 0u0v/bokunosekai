@@ -132,11 +132,30 @@
   .wname span { display: inline-block; }
 
   .wnote {
-    margin: .4rem 0 .7rem;
+    margin: .4rem 0 .1rem;
     font-size: .76rem;
     color: var(--dim);
     font-variant-numeric: tabular-nums;
   }
+
+  /* ★★★**更新日は作品ごとに、その作品の枠の中へ**（0u0さん 2026-09-01）＝
+     　作品が3本になり、頻度が作品ごとに別々になった（火水金／木土月／完結済み）。
+     　**全体に1行だけ置く形では、どの作品の話か分からない。**
+     ★★**`.wnote`（第2章 連載中／全4話）とは行を分ける**＝1行に繋ぐと、
+     　狭い画面で語の途中から折り返して二行になる。**どうせ二行になるなら、切れ目をこちらで決める。**
+     ★★**曜日だけ地の色（--paper）で立てる**＝ここが「いつ来ればいいか」の答え。
+     　◆★**色では分けない**（このページの決まり）。**明るさの差だけ**で立てている。
+     ★★★**ここは直書き。正は `patrol.py` の `巡回["更新日"]`**＝
+     　観測所ページ（`dashboard.html`）は台帳から出しているが、**このサイトはGitHubの静的ページで
+     　台帳を読めない。**→ **曜日を変えたら、ここと `index.html` の最下部の2か所を手で直す。**
+     　（`README.txt`【直すところ】にも同じことを書いた） */
+  .wdate {
+    margin: 0 0 .7rem;
+    font-size: .74rem;
+    color: var(--dim);
+    font-variant-numeric: tabular-nums;
+  }
+  .wdate b { font-weight: 600; color: var(--paper); }
 
   /* ★★サイトのボタンは横に3つ＝1作品が1画面のうち3行に収まる。
      　狭い画面では字が詰まるので、下限を切って縦へ落とす。 */
@@ -226,8 +245,34 @@
     color: var(--dim);
   }
 
+  /* ★★★**作品が3本になっても1画面に収まるように詰めた**（2026-09-01。9/3の n2 に備えて）＝
+     　◆★**実測**（375×812・作品3本）＝**詰める前 963px で151px溢れた**。詰めて **812px ぴったり。**
+     　◆★**詰めた順は「余白 → 行間 → 字」**（このページの決まり）。
+     　　字に手を付けたのは `.wname` だけ（1.02rem→.95rem・行間1.7→1.6）で、**ボタンと更新日は元のまま。**
+     　◆★★**携帯はここに入る**（縦900px以下）。**机の画面（900pxより高い）は元の広いまま。**
+     ★★★**`.catch` を落とすのは「作品が3本以上あるとき」だけ**（`:has()`）＝
+     　◆**2本のうちは元のまま出す。**作品が増えた日に、勝手に1行ぶんの席が空く。
+     　◆★**落とす順は「無くても意味が通るもの」から**＝「読める場所の一覧です。」は
+     　　題（0u0）と、その下の作品名・サイト名で読み取れる。**ボタンと作品名と更新日には手を付けない。**
+     　◆★**`:has()` が効かない古い画面では、少しだけ縦に転がる。**字が読めなくなる形では壊れない。 */
+  @media (max-height: 900px) {
+    main { padding: 1.8rem 1.9rem 3.4rem; gap: clamp(1.4rem, 4vh, 2rem); }
+    .catch { margin-top: .9rem; }
+    .bottom { gap: 1rem; }
+    .work { padding: .85rem .9rem .9rem; }
+    .wname { font-size: .95rem; line-height: 1.6; }
+    .wnote { margin: .35rem 0 .05rem; }
+    .wdate { margin: 0 0 .55rem; }
+    .door { padding: .72rem .3rem; }
+    .maru { width: 2.4rem; height: 2.4rem; }
+    .maker p { margin-bottom: .5rem; }
+    main:has(.work:nth-of-type(3)) .catch { display: none; }
+  }
+
   /* ★★**背の低い画面では余白から詰める**＝このページの値打ちは「1画面で全部見えること」。
-     　字やボタンを小さくする前に、まず余白を削る（読みやすさは落とさない）。 */
+     　字やボタンを小さくする前に、まず余白を削る（読みやすさは落とさない）。
+     ★**この塊は上の900pxより後に置く**＝同じ強さなので、**後に書いたほうが勝つ。**
+     　順を入れ替えると、背の低い画面で上の（ゆるい）値に上書きされて詰まらなくなる。 */
   @media (max-height: 700px) {
     main { padding: 1.1rem 1.4rem 2.6rem; gap: 1rem; }
     .title { font-size: 1.7rem; }
@@ -237,7 +282,9 @@
     .catch { display: none; }
     .bottom { gap: .9rem; }
     .work { padding: .75rem .85rem .8rem; border-radius: .9rem; }
-    .wnote { margin: .3rem 0 .55rem; }
+    /* ★更新日で1行増えたぶんは、余白から取り返す（字は小さくしない） */
+    .wnote { margin: .3rem 0 .05rem; }
+    .wdate { margin: 0 0 .55rem; }
     .door { padding: .68rem .3rem; }
     .maru { width: 2.4rem; height: 2.4rem; }
     .maker p { margin-bottom: .5rem; }
@@ -261,6 +308,7 @@
     <section class="work">
       <h2 class="wname">僕の世界</h2>
       <p class="wnote">第2章 連載中</p>
+      <p class="wdate"><b>火・水・金</b>の21時更新</p>
       <nav class="doors">
         <a class="door" href="go/sekai-narou.html">なろう</a>
         <a class="door" href="go/sekai-kakuyomu.html">カクヨム</a>
@@ -271,12 +319,31 @@
     <section class="work">
       <h2 class="wname"><span>五年で三十二回毒を呑まされた</span><span>婚約者ですが、</span><span>婚約破棄されたので</span><span>今後の毒見はご自分でどうぞ</span></h2>
       <p class="wnote">全4話</p>
+      <p class="wdate"><b>完結済み</b>（更新なし）</p>
       <nav class="doors">
         <a class="door" href="go/n1-narou.html">なろう</a>
         <a class="door" href="go/n1-kakuyomu.html">カクヨム</a>
         <a class="door" href="go/n1-estar.html">エブリスタ</a>
       </nav>
     </section>
+
+    <!-- ★★★**9/3(木)の公開に合わせて、この囲みを外す**（2026-09-01 未明に用意した）＝
+         　　◆★**外す前に `go/n2-*.html` の3本のURLを埋める**（いまは `URL待ち-…` のまま）。
+         　　　**埋めずに外すと、押した人が転送されずに止まる。**
+         　　◆★あわせて `n2/`（作品の入り口）の3本も同じURLで埋める。**片方だけ埋めない。**
+         　　◆★**題は「意味の切れ目」で割ってある**（`<span>` の位置）。
+         　　◆★**話数を書かない**（連載中なので天井を先に見せない）。★**「前作の続きです」も書かない。**
+    <section class="work">
+      <h2 class="wname"><span>毒と美食の</span><span>大公家事件簿</span></h2>
+      <p class="wnote">連載中</p>
+      <p class="wdate"><b>木・土・月</b>の21時更新</p>
+      <nav class="doors">
+        <a class="door" href="go/n2-narou.html">なろう</a>
+        <a class="door" href="go/n2-kakuyomu.html">カクヨム</a>
+        <a class="door" href="go/n2-estar.html">エブリスタ</a>
+      </nav>
+    </section>
+    -->
 
     <hr class="line">
 
