@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!-- 2026-09-01 に本番へ上げた（`go/` の3本にURLを入れたうえで）。9/3(木)19:00 に3サイトで公開。
+     　　★色とキャッチとあらすじは新作の担当が決めたもの。勝手に変えない。 -->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>毒と美食の大公家事件簿</title>
+<meta name="description" content="北の大公領で、祭りの振る舞いの席にいた男が倒れる。土地の医師は「古い樽の事故だ」と言い、誰もが頷いた。けれど大公妃リーゼロッテだけは、その椀から立つ匂いを知っていた。 小説家になろう・カクヨム・エブリスタで同時掲載。">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="毒と美食の大公家事件簿">
+<meta property="og:title" content="毒と美食の大公家事件簿">
+<meta property="og:description" content="北の大公領で、祭りの振る舞いの席にいた男が倒れる。土地の医師は「古い樽の事故だ」と言い、誰もが頷いた。けれど大公妃リーゼロッテだけは、その椀から立つ匂いを知っていた。 小説家になろう・カクヨム・エブリスタで読めます。">
+<meta property="og:url" content="https://0u0v.github.io/bokunosekai/n2/">
+<!-- ★n2 専用のカード＝`大公家事件簿_16x9_4K.png` から `mkcard.py --moto/--saki` で作った1200x630（180KB）。
+     ★4Kのまま置かない（重いうえ、Xはどのみち再圧縮する）。 -->
+<meta property="og:image" content="https://0u0v.github.io/bokunosekai/n2/ogp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="石造りの厨に立ち、湯気の立つ大皿へ手をかざす銀髪の女性">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="毒と美食の大公家事件簿">
+<meta name="twitter:description" content="北の大公領で、祭りの振る舞いの席にいた男が倒れる。土地の医師は「古い樽の事故だ」と言い、誰もが頷いた。けれど大公妃リーゼロッテだけは、その椀から立つ匂いを知っていた。 小説家になろう・カクヨム・エブリスタで読めます。">
+<meta name="twitter:image" content="https://0u0v.github.io/bokunosekai/n2/ogp.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%B7%3C/text%3E%3C/svg%3E">
+
+<style>
+  /* ★★★**形は「僕の世界」の入り口とまったく同じ。変えたのは文字と色だけ**（0u0指示 2026-08-25
+     「フォーマットは僕の世界と同じで文字と色を変えるだけにしようね」）＝
+     　◆組み方・class名・余白・動き（rise / fade）・foot の位置は**1つも変えていない。**
+     　◆**色の役割も同じまま入れ替えただけ**＝night=地／lift=ボタンの地／line=枠／
+     　　paper=文字／dim=薄い文字／flame=差し色。**名前も残してある**（見比べやすいように）。
+     　◆★**font-size は題だけ変えた。**僕の世界の題は4字、こちらは11字。
+     ★★★**この色で確定**（新作の担当が 2026-09-01 に承認）。
+     　　選んだ筋＝**n1 は明るい地・こちらは暗い地。**同じ作者の別の作品だと**一目で分かるように離した。**
+     　　◆★★**分けているのは明度で、色相ではない**＝0u0さんは赤緑タイプなので、
+     　　　**色相だけで分けたものは届かない。**地と文字の明るさの差で分けてある。
+     　　◆★**毒っぽい緑・紫は使わない**（n1 と同じ縛り。中身はざまぁと溺愛で、読後感は甘い）。
+     　　◆★**僕の世界の紺＋金とも離した**＝こちらは**墨に近い茶と銅。**
+     ★★**色で意味を分けていない**＝押す先はどれもサイト名が文字で書いてある。 */
+  :root {
+    color-scheme: dark;
+    --night:   #1b1714;
+    --lift:    #241f1b;
+    --line:    #3a322b;
+    --paper:   #f2ece1;
+    --dim:     #a2958a;
+    --flame:   #c9803f;
+
+    --maru: "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ ProN W4",
+            "Hiragino Maru Gothic Pro", "Noto Sans JP",
+            "Yu Gothic Medium", "Meiryo", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { background: var(--night); }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(90% 50% at 50% 0%, #241d18 0%, #1b1714 70%),
+      var(--night);
+    color: var(--paper);
+    font-family: var(--maru);
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: center;
+  }
+
+  main {
+    position: relative;
+    width: 100%;
+    max-width: 24rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 2rem 1.9rem 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: clamp(2.4rem, 7vh, 3.4rem);
+  }
+
+  .top { width: 100%; }
+
+  .title {
+    margin: 0;
+    /* ★僕の世界は clamp(1.95rem, 8.4vw, 2.35rem)、n1 は clamp(1.05rem, 4.6vw, 1.3rem)。
+       　題が4字・43字・11字と違うので、ここだけ字数に合わせている */
+    font-size: clamp(1.5rem, 6.4vw, 1.85rem);
+    font-weight: 600;
+    letter-spacing: .05em;
+    line-height: 1.7;
+    animation: rise 1.4s .1s both;
+  }
+  /* ★★★**題は「意味の切れ目」でしか折り返さない**（n1 と同じ）＝
+     ◆**そのままだと語の途中で切れる**（「大公家事／件簿」のように）。
+     ◆★**改行を打ち込まない**（`<br>` で固定すると、狭い画面と広い画面のどちらかで必ず不格好になる）。
+     　→ **かたまりを inline-block にして、切れ目を「かたまりの間」だけにする。** */
+  .title span { display: inline-block; }
+
+  .catch {
+    margin: 1.3rem 0 0;
+    font-size: clamp(.95rem, 4.4vw, 1.1rem);
+    font-weight: 500;
+    line-height: 2.05;
+    color: var(--paper);
+    animation: rise 1.6s .6s both;
+  }
+  .catch .fade { color: var(--dim); }
+
+  .author {
+    margin: 1.2rem 0 0;
+    font-size: .8rem;
+    color: var(--dim);
+    animation: fade 1.4s 1.4s both;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(.5rem); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
+  .bottom { width: 100%; }
+
+  .doors {
+    display: flex;
+    flex-direction: column;
+    gap: .65rem;
+  }
+
+  .door {
+    display: block;
+    padding: .95rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--lift);
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: border-color .25s, background .25s, color .25s, transform .25s;
+  }
+  .door:hover, .door:focus-visible {
+    border-color: var(--flame);
+    background: #2e2620;
+    color: var(--flame);
+    transform: translateY(-2px);
+  }
+  .door:focus-visible { outline: 2px solid var(--flame); outline-offset: 3px; }
+
+  .foot {
+    position: absolute;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: clamp(1.4rem, 4vh, 2.2rem);
+    margin: 0;
+    font-size: .74rem;
+    color: var(--dim);
+  }
+  .foot b { font-weight: 600; color: var(--paper); font-variant-numeric: tabular-nums; }
+  .foot .sep { opacity: .45; padding: 0 .5em; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .title, .catch, .author { animation: none; }
+    .door { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <div class="top">
+    <h1 class="title"><span>毒と美食の</span><span>大公家事件簿</span></h1>
+
+    <!-- ★★確定（新作の担当 2026-09-01）＝キャッチは「毒見役を辞めた彼女が、辞めた技だけで人を救う話。」で、
+         　この割り方のままでよい、と返事をもらっている。★勝手に割り直さない。 -->
+    <p class="catch">
+      毒見役を辞めた彼女が、<br>
+      <span class="fade">辞めた技だけで、人を救う。</span>
+    </p>
+
+    <p class="author">0u0</p>
+  </div>
+
+  <div class="bottom">
+    <nav class="doors">
+      <a class="door" href="go/narou.html">小説家になろう</a>
+      <a class="door" href="go/kakuyomu.html">カクヨム</a>
+      <a class="door" href="go/estar.html">エブリスタ</a>
+    </nav>
+  </div>
+
+  <!-- ★★**話数を書かない**（連載中のものは天井を先に見せない）。★**「前作の続きです」も書かない。** -->
+  <p class="foot">どこで読んでも同じ本文<span class="sep">／</span><b>木・土・月</b>の19時更新</p>
+</main>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "50f1e1ef4bb94cf492dbb7e8dbb6b6f7"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
