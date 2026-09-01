@@ -145,10 +145,11 @@
      　狭い画面で語の途中から折り返して二行になる。**どうせ二行になるなら、切れ目をこちらで決める。**
      ★★**曜日だけ地の色（--paper）で立てる**＝ここが「いつ来ればいいか」の答え。
      　◆★**色では分けない**（このページの決まり）。**明るさの差だけ**で立てている。
-     ★★★**ここは直書き。正は `patrol.py` の `巡回["更新日"]`**＝
-     　観測所ページ（`dashboard.html`）は台帳から出しているが、**このサイトはGitHubの静的ページで
-     　台帳を読めない。**→ **曜日を変えたら、ここと `index.html` の最下部の2か所を手で直す。**
-     　（`README.txt`【直すところ】にも同じことを書いた） */
+     ★★★**曜日は台帳から差し込む**＝**`data-更新日="<作品名>"` の印を置いて、
+     　`ageru.py` が上げる直前に台帳（`patrol.py` の `巡回["更新日"]`）の値で中身を入れ替える。**
+     　◆**HTMLに書いてある曜日は見本**（`file:///` で開いたときに正しく見えるため）。**手で直さない。**
+     　◆★**`patrol.py` の1箇所を直せば、器の全部が最新になる**（トップ／作品一覧／n2）。
+     　◆★**完結済みのように台帳に無いものは、印を付けない**（直書きのまま） */
   .wdate {
     margin: 0 0 .7rem;
     font-size: .74rem;
@@ -308,7 +309,7 @@
     <section class="work">
       <h2 class="wname">僕の世界</h2>
       <p class="wnote">第2章 連載中</p>
-      <p class="wdate"><b>月・水・金</b>の21時更新</p>
+      <p class="wdate" data-更新日="僕の世界"><b>月・水・金</b>の21時更新</p>
       <nav class="doors">
         <a class="door" href="go/sekai-narou.html">なろう</a>
         <a class="door" href="go/sekai-kakuyomu.html">カクヨム</a>
@@ -333,7 +334,7 @@
     <section class="work">
       <h2 class="wname"><span>毒と美食の</span><span>大公家事件簿</span></h2>
       <p class="wnote">連載中</p>
-      <p class="wdate"><b>火・木・土</b>の19時更新</p>
+      <p class="wdate" data-更新日="毒と美食の大公家事件簿"><b>火・木・土</b>の19時更新</p>
       <nav class="doors">
         <a class="door" href="go/n2-narou.html">なろう</a>
         <a class="door" href="go/n2-kakuyomu.html">カクヨム</a>
