@@ -140,9 +140,20 @@
   .foot b { font-weight: 600; color: var(--paper); font-variant-numeric: tabular-nums; }
   .foot .sep { opacity: .45; padding: 0 .5em; }
 
+  /* ★作者ページへの道。★扉と同じ重さにしない（読者が来る動機は作品のほう） */
+  .sakusha { margin: 1.1rem 0 0; text-align: center; font-size: .78rem; }
+  .sakusha a {
+    color: var(--dim);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: .15em;
+    transition: color .25s, border-color .25s;
+  }
+  .sakusha a:hover, .sakusha a:focus-visible { color: var(--paper); border-color: var(--paper); }
+
   @media (prefers-reduced-motion: reduce) {
     .title, .catch, .author { animation: none; }
-    .door { transition: none; }
+    .door, .sakusha a { transition: none; }
   }
 </style>
 </head>
@@ -166,6 +177,7 @@
       <a class="door" href="go/kakuyomu.html">カクヨム</a>
       <a class="door" href="go/estar.html">エブリスタ</a>
     </nav>
+    <p class="sakusha"><a href="works/">0u0（作者ページ）へ</a></p>
   </div>
 
   <!-- ★★更新日は上げる直前に台帳から差し込む（ageru.py）。ここに書いてあるのは見本。手で直さない -->
