@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!-- ★n4（案8『うろ覚えの現代知識で戦争を終わらせた英雄ですが、国を追放されました』）。
+     形は n3 と同じで、文字と色だけ変えてある。
+     ★★色・キャッチ・説明文は新作の担当が決めたもの。勝手に変えない。
+     ★カードの絵＝画像置き場\英雄_16x9_4K.png から mkcard.py で作ってある。 -->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>うろ覚えの現代知識で戦争を終わらせた英雄ですが、国を追放されました　～僕が持ち込んだ知識が、今度は僕を殺しに来る～</title>
+<meta name="description" content="会社員だった相馬剛は、異世界に呼び出され、うろ覚えの知識で戦争を終わらせた英雄と呼ばれた。だがその知識から作られた物で民が死に、剛は責めを負わされて国を追放される。歩いた先の村で、剛は自分の「たぶん」が何を生んだのかを知ることになる。 小説家になろう・カクヨム・エブリスタで同時掲載。">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="うろ覚えの英雄">
+<meta property="og:title" content="うろ覚えの現代知識で戦争を終わらせた英雄ですが、国を追放されました">
+<meta property="og:description" content="会社員だった相馬剛は、異世界に呼び出され、うろ覚えの知識で戦争を終わらせた英雄と呼ばれた。だがその知識から作られた物で民が死に、剛は責めを負わされて国を追放される。歩いた先の村で、剛は自分の「たぶん」が何を生んだのかを知ることになる。 小説家になろう・カクヨム・エブリスタで読めます。">
+<meta property="og:url" content="https://0u0v.github.io/bokunosekai/n4/">
+<meta property="og:image" content="https://0u0v.github.io/bokunosekai/n4/ogp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="峠で焼き菓子を割るギドと剛">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="うろ覚えの現代知識で戦争を終わらせた英雄ですが、国を追放されました">
+<meta name="twitter:description" content="会社員だった相馬剛は、異世界に呼び出され、うろ覚えの知識で戦争を終わらせた英雄と呼ばれた。だがその知識から作られた物で民が死に、剛は責めを負わされて国を追放される。歩いた先の村で、剛は自分の「たぶん」が何を生んだのかを知ることになる。 小説家になろう・カクヨム・エブリスタで読めます。">
+<meta name="twitter:image" content="https://0u0v.github.io/bokunosekai/n4/ogp.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9C%3C/text%3E%3C/svg%3E">
+
+<style>
+  /* ★★★**形は「僕の世界」の入り口とまったく同じ。変えたのは文字と色だけ**（n1・n2・n3 と同じ決まり）。
+     ★色の筋＝**深い藍の地に、白磁の文字。差し色は淡い鋼色。**（色は新作の担当が決めた「深い藍」。
+     　地の藍は表紙の絵の旗の色から取った＝#012978 を地として沈めたもの）
+     　◆n1＝明るい地に紅／n2＝暗い茶の地に銅／n3＝灰白の地に青灰／僕の世界＝ほぼ黒の紺に金。
+     　◆★分けているのは明度と地の色＝0u0さんは赤緑タイプなので、色相だけで分けない。
+     　　★僕の世界（#080c14＝黒に近い）と離すために、地ははっきり青いほうへ振ってある（#101f3a）。
+     　　差し色も、金（#dcae55）と正反対の淡い鋼色（#9dbbd8）にしてある。 */
+  :root {
+    color-scheme: dark;
+    --night:   #101f3a;
+    --lift:    #17294a;
+    --line:    #2c3f63;
+    --paper:   #eef2f7;
+    --dim:     #9aa8bf;
+    --flame:   #9dbbd8;
+
+    --maru: "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ ProN W4",
+            "Hiragino Maru Gothic Pro", "Noto Sans JP",
+            "Yu Gothic Medium", "Meiryo", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { background: var(--night); }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(90% 50% at 50% 0%, #16294b 0%, #101f3a 70%),
+      var(--night);
+    color: var(--paper);
+    font-family: var(--maru);
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: center;
+  }
+
+  main {
+    position: relative;
+    width: 100%;
+    max-width: 24rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 2rem 1.9rem 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: clamp(2.4rem, 7vh, 3.4rem);
+  }
+
+  .top { width: 100%; }
+
+  .title {
+    margin: 0;
+    /* ★題が長い（本題だけで42字）ので n3 と同じ小ささ。副題はさらに一段下げる */
+    font-size: clamp(1.05rem, 4.6vw, 1.3rem);
+    font-weight: 600;
+    letter-spacing: .05em;
+    line-height: 1.7;
+    animation: rise 1.4s .1s both;
+  }
+  /* ★★★**題は「意味の切れ目」でしか折り返さない**（n1・n2・n3 と同じ）。改行は打ち込まない */
+  .title span { display: inline-block; }
+  .title .sub { display: block; margin-top: .6rem; font-size: .8em; font-weight: 500; color: var(--dim); }
+  .title .sub span { display: inline-block; }
+
+  .catch {
+    margin: 1.3rem 0 0;
+    font-size: clamp(.95rem, 4.4vw, 1.1rem);
+    font-weight: 500;
+    line-height: 2.05;
+    color: var(--paper);
+    animation: rise 1.6s .6s both;
+  }
+  .catch .fade { color: var(--dim); }
+
+  .author {
+    margin: 1.2rem 0 0;
+    font-size: .8rem;
+    color: var(--dim);
+    animation: fade 1.4s 1.4s both;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(.5rem); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
+  .bottom { width: 100%; }
+
+  .doors {
+    display: flex;
+    flex-direction: column;
+    gap: .65rem;
+  }
+
+  .door {
+    display: block;
+    padding: .95rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--lift);
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: border-color .25s, background .25s, color .25s, transform .25s;
+  }
+  .door:hover, .door:focus-visible {
+    border-color: var(--flame);
+    background: #1d3157;
+    color: var(--flame);
+    transform: translateY(-2px);
+  }
+  .door:focus-visible { outline: 2px solid var(--flame); outline-offset: 3px; }
+
+  .foot .sep { opacity: .45; padding: 0 .5em; }
+  .foot {
+    position: absolute;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: clamp(1.4rem, 4vh, 2.2rem);
+    margin: 0;
+    font-size: .74rem;
+    color: var(--dim);
+  }
+
+  /* ★作者ページへの道。★扉と同じ重さにしない（読者が来る動機は作品のほう） */
+  .sakusha { margin: 1.1rem 0 0; text-align: center; font-size: .78rem; }
+  .sakusha a {
+    color: var(--dim);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: .15em;
+    transition: color .25s, border-color .25s;
+  }
+  .sakusha a:hover, .sakusha a:focus-visible { color: var(--paper); border-color: var(--paper); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .title, .catch, .author { animation: none; }
+    .door, .sakusha a { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <div class="top">
+    <h1 class="title"><span>うろ覚えの現代知識で</span><span>戦争を終わらせた英雄ですが、</span><span>国を追放されました</span><span class="sub"><span>～僕が持ち込んだ知識が、</span><span>今度は僕を殺しに来る～</span></span></h1>
+
+    <p class="catch">
+      僕が言ったのは、<br>
+      <span class="fade">うろ覚えの話と「たぶん」だけだ。</span>
+    </p>
+
+    <p class="author">0u0</p>
+  </div>
+
+  <div class="bottom">
+    <nav class="doors">
+      <a class="door" href="go/narou.html">小説家になろう</a>
+      <a class="door" href="go/kakuyomu.html">カクヨム</a>
+      <a class="door" href="go/estar.html">エブリスタ</a>
+    </nav>
+    <p class="sakusha"><a href="../works/">0u0（作者ページ）へ</a></p>
+  </div>
+
+  <!-- ★★**話数と状態は台帳から差し込む**（`data-姿`。正＝`patrol.py` の姿の表／作るのは `patrol.一覧の札`）＝
+       　　◆完結した作品は「全◯話・完結」、連載中は「連載中」。★**「完結済み」とは言わない**（言い方を1つに）。
+       　　◆★**連載中は話数を書かない**＝途中で数が動く（`節目の線` のとおり）。
+       　　◆★書いてある字は見本。**手で直さない**（完結した日に札は自分で替わる）。
+       　　◆★**更新の形（曜日）は作品一覧が持つ**＝この行には入れない。 -->
+  <!-- ★「前作の続きです」と書かない。 -->
+  <p class="foot">どこで読んでも同じ本文<span class="sep">／</span><span data-姿="うろ覚えの英雄">連載中</span></p>
+</main>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "50f1e1ef4bb94cf492dbb7e8dbb6b6f7"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
