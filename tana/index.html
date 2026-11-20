@@ -3,48 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ひと駅で第1話が読み終わる棚</title>
-<meta name="description" content="第1話が5,000字以内の作品だけを集めました。ひと駅ぶんで試して、合わなければ閉じられる。そのための棚です。">
+<title>ふらっと第1話の棚</title>
+<meta name="description" content="第1話が5,000字以内の作品だけが並んでいます。本屋でふらっと手に取るように、第1話だけ読んでみてください。">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="僕の世界">
-<meta property="og:title" content="ひと駅で第1話が読み終わる棚">
-<meta property="og:description" content="第1話が5,000字以内の作品だけを集めました。ひと駅ぶんで試して、合わなければ閉じられる。そのための棚です。">
+<meta property="og:title" content="【読み専さん歓迎】本屋でふらっと手に取るように、第1話だけ読んでみてください">
+<meta property="og:description" content="第1話が5,000字以内の作品だけが並んでいます。合わなければ閉じてかまいません。">
 <meta property="og:url" content="https://0u0v.github.io/bokunosekai/tana/">
 <meta property="og:image" content="https://0u0v.github.io/bokunosekai/card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="夜の森で焚き火のそばに座る旅人">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ひと駅で第1話が読み終わる棚">
-<meta name="twitter:description" content="第1話が5,000字以内の作品だけを集めました。ひと駅ぶんで試して、合わなければ閉じられる。そのための棚です。">
+<meta name="twitter:title" content="【読み専さん歓迎】本屋でふらっと手に取るように、第1話だけ読んでみてください">
+<meta name="twitter:description" content="第1話が5,000字以内の作品だけが並んでいます。合わなければ閉じてかまいません。">
 <meta name="twitter:image" content="https://0u0v.github.io/bokunosekai/card.png">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9A%3C/text%3E%3C/svg%3E">
 
 <!--
   ════════════════════════════════════════════════
-  ★★★ 8/20に直すのは1か所だけ ★★★
-  　★★**2026-08-25から、URLは中継（go/tana-kakuyomu.html ／ go/tana-estar.html）の中にある。**
-　　差し替えるときは**中継のほうを直す**（下の「リンク」は中継を指したまま動かさない）。
-　　＝そうしないと**どのボタンが何回押されたか**が残らない。
-  　★「8月20日から」の字は **URLを入れた時点で自動で消える**（下のJSが .when を外す）。
-  　　★**手で消さない。**消しても害は無いが、当日の手順が1つ増えるだけ。
-  　　（2026-08-18に実装を読み直して確かめた。8/12の実物確認と同じ）
+  ★★★ このページは手で直すところが無い ★★★
+  　・ボタンの行き先は中継（../go/tana-kakuyomu.html ／ ../go/tana-estar.html）の中にある。
+  　　カクヨムの中継の行き先と、下の「これまでの棚」は、上げる直前に ageru.py が台帳から差し込む
+  　　（正＝台帳の 棚.企画ID と 棚.前の棚。棚を立て直したら py tana.py --tatenaoshi を叩いて上げ直すだけ）。
+  　・題と説明はカクヨムの棚の題・キャッチコピーと揃える（正＝告知\2026-08-20_カクヨム自主企画_読者が選べる棚_案.txt【2-2】）。
+  　　カードの題（og:title）は棚の題そのもの。ページの見出しは1行に収めるため、自作タグ #ふらっと第1話 の形にしてある。
   ════════════════════════════════════════════════
 -->
-<script>
-  // ★★★**行き先は中継の中にある**（2026-08-25・0u0GO）＝
-  //   ここに本物のURLを直に書くと、**押された数がどこにも残らない。**
-  //   中継（go/tana-*.html）を通せば、パスごとに「何回押されたか」が Cloudflare に出る。
-  //   ★★**URLを差し替えるときは、この行ではなく中継のほうを直す**
-  //     （go/tana-kakuyomu.html と go/tana-estar.html。それぞれ3か所に同じURLが入っている）。
-  //   ★「準備中」に戻したいときは、ここを "" にする（いままでどおり .when が残る）。
-  const リンク = {
-    カクヨム:   "../go/tana-kakuyomu.html",
-    エブリスタ: "../go/tana-estar.html"
-  };
-</script>
 
 <style>
   :root {
@@ -60,8 +47,8 @@
             "Hiragino Maru Gothic Pro", "Noto Sans JP",
             "Yu Gothic Medium", "Meiryo", system-ui, sans-serif;
 
-    /* ★★**一文＝一行**にするための字の大きさ（2026-08-12。0u0さん指示）。
-       　いちばん長い文＝「ひと駅ぶんで試して、合わなければ閉じられる。」＝21.9文字ぶん。
+    /* ★★**一文＝一行**にするための字の大きさ（0u0さん指示）。
+       　いちばん長い文＝「第1話が5,000字以内の作品だけが並んでいます。」＝およそ23文字ぶん。
        　**画面の幅から左右の余白を引いて、その文字数で割る。**こうすると
        　どの幅でも折り返さない（狭い機種では字が小さくなるだけ）。
        　24rem は main の最大幅。これ以上広い画面では大きくしない。 */
@@ -70,7 +57,7 @@
   }
 
   * { box-sizing: border-box; }
-  html { background: var(--night); }
+  html { background: var(--night); scroll-behavior: smooth; }
 
   body {
     margin: 0;
@@ -79,12 +66,14 @@
       var(--night);
     color: var(--paper);
     font-family: var(--maru);
-    /* ★★丸ゴは細いまま使う。600を当てるとiPhoneが太らせて字がつぶれる（2026-08-12） */
+    /* ★★丸ゴは細いまま使う。600を当てるとiPhoneが太らせて字がつぶれる */
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* ★上＝いまの棚（1画面ぶん）、下＝これまでの棚。縦に積んで、横は真ん中に置く */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   /* ★焚き火の灯り。ゆっくり明るくなってから、かすかに息をする */
@@ -108,8 +97,8 @@
     min-height: 100vh;
     min-height: 100dvh;
     /* ★左右＝一文を一行に収めるぶん詰めた。
-       ★下＝**中身をすこし上へ置く。**ど真ん中に置くと、下の「僕の世界」との間が空いて
-       　　沈んで見える（2026-08-12・0u0さん指摘）。下の余白を厚くすると中身が上がる。 */
+       ★下＝**中身をすこし上へ置く。**ど真ん中に置くと、下の「これまでの棚」の案内との間が空いて
+       　　沈んで見える（0u0さん指摘）。下の余白を厚くすると中身が上がる。 */
     padding: 2rem 1.3rem 6.5rem;
     display: flex;
     flex-direction: column;
@@ -117,7 +106,7 @@
     align-items: center;
     text-align: center;
     /* ★「題＋説明」と「ボタン＋注」の間だけ広く取る。
-       　ここが他と同じ幅だと、どれも同じ重さに見えて散らかる（2026-08-12） */
+       　ここが他と同じ幅だと、どれも同じ重さに見えて散らかる */
     gap: clamp(2.2rem, 5.4vh, 2.9rem);
   }
 
@@ -125,7 +114,7 @@
 
   .title {
     margin: 0;
-    /* ★★**1行に収める。**題が割れると看板が2つに見える（2026-08-12） */
+    /* ★★**1行に収める。**題が割れると看板が2つに見える */
     font-size: var(--midashi);
     white-space: nowrap;
     font-weight: 500;          /* ★丸ゴは太らせない */
@@ -134,23 +123,24 @@
     animation: rise 1.5s .25s both;
   }
 
-  /* ★★説明は**一文＝一行。**途中で折ると意味の切れ目が分からなくなる（2026-08-12・0u0さん指示） */
+  /* ★★説明は**一文＝一行。**途中で折ると意味の切れ目が分からなくなる（0u0さん指示）。
+     　キャッチコピーは読点のところで2行に分ける（1行では字が小さくなりすぎる） */
   .lines {
     margin: 1.6rem 0 0;
     display: flex;
     flex-direction: column;
-    gap: .5rem;                /* ★下の2文は続きなので近づける */
+    gap: .5rem;                /* ★下の2行はひと続きなので近づける */
     font-size: var(--hitogyo);
     font-weight: 400;
     line-height: 1.75;
     animation: rise 1.7s .75s both;
   }
   .lines p { margin: 0; white-space: nowrap; }
-  /* ★1文目は「何の棚か」。2〜3文目は「どう使うか」。**2つのかたまりに見えるよう間を空ける** */
+  /* ★1行目は「何の棚か」。2〜3行目は「どう読むか」。**2つのかたまりに見えるよう間を空ける** */
   .lines p:first-child { margin-bottom: .45rem; }
   .lines .fade { color: var(--dim); }
 
-  /* ★★折り返しは「文節のかたまり」でだけ起こす（2026-08-12）。
+  /* ★★折り返しは「文節のかたまり」でだけ起こす。
      　自動に任せると「集めた棚で／す。」のように途中で切れる。
      　かたまりを inline-block にすると、**かたまりの中では折れない。** */
   .w { display: inline-block; }
@@ -187,16 +177,8 @@
     transform: translateY(-2px);
   }
   .door:focus-visible { outline: 2px solid var(--flame); outline-offset: 3px; }
-
-  /* ★URLがまだ無いとき。押せない見た目にして、いつ開くかを出す */
-  .door.soon {
-    color: var(--dim);
-    border-style: dashed;
-    background: transparent;
-    cursor: default;
-    pointer-events: none;
-  }
-  .door.soon .when { font-weight: 400; font-size: .76rem; opacity: .8; }
+  /* ★終わった棚へのボタンは、いまの棚より一段控えめに（枠だけ） */
+  .door.ghost { background: transparent; font-size: .88rem; padding: .65rem 1rem; }
 
   /* ★書く人向け。読む人の邪魔をしないよう、ボタンの下に小さく */
   .note {
@@ -208,19 +190,47 @@
     animation: fadein 1.4s 1.5s both;
   }
 
-  .foot {
+  /* ★1画面目のいちばん下＝「下に、これまでの棚がある」の案内。前の棚が無い間は出さない（下のJS） */
+  .more {
     position: absolute;
     left: 1.5rem;
     right: 1.5rem;
     bottom: clamp(1.2rem, 3.5vh, 2rem);
+    font-size: .78rem;
+    color: var(--dim);
+    text-decoration: none;
+    animation: fadein 1.4s 1.8s both;
+  }
+  .more:hover, .more:focus-visible { color: var(--flame); }
+
+  /* ★★これまでの棚＝立て直すたびに1冊ずつ下に増える（中身は ageru.py が台帳から差し込む） */
+  .past {
+    width: 100%;
+    max-width: 24rem;
+    padding: 3rem 1.3rem 1rem;
+    text-align: center;
+    border-top: 1px solid var(--line);
+  }
+  .past-title { margin: 0 0 2rem; font-size: 1rem; font-weight: 500; color: var(--dim); }
+  .shelf { margin: 0 0 3rem; }
+  .shelf-name { margin: 0; font-size: .92rem; color: var(--flame); }
+  .shelf-when { margin: .25rem 0 0; font-size: .78rem; color: var(--dim); }
+  .shelf-count { margin: 1.1rem 0 .6rem; font-size: 1rem; }
+  .shelf-count .big { font-size: 2.6rem; margin: 0 .12em; line-height: 1.2; }
+  .shelf-sub { margin: .15rem 0 0; font-size: .8rem; line-height: 1.8; color: var(--dim); }
+  .shelf .door { margin-top: 1.3rem; }
+
+  .foot {
     margin: 0;
+    padding: 1rem 0 clamp(1.2rem, 3.5vh, 2rem);
     font-size: .74rem;
     color: var(--dim);
   }
   .foot a { color: var(--dim); }
 
   @media (prefers-reduced-motion: reduce) {
-    body::before, .title, .lines, .door, .note { animation: none; opacity: 1; }
+    html { scroll-behavior: auto; }
+    body::before, .title, .lines, .door, .note, .more { animation: none; opacity: 1; }
     .door { transition: none; }
   }
 </style>
@@ -229,19 +239,20 @@
 
 <main>
   <div class="top">
-    <h1 class="title">ひと駅で第1話が読み終わる棚</h1>
+    <h1 class="title">ふらっと第1話の棚</h1>
 
     <div class="lines">
-      <p>第1話が5,000字以内の作品だけを集めました。</p>
-      <p class="fade">ひと駅ぶんで試して、合わなければ閉じられる。</p>
-      <p class="fade">そのための棚です。</p>
+      <p>第1話が5,000字以内の作品だけが並んでいます。</p>
+      <p class="fade">本屋でふらっと手に取るように、</p>
+      <p class="fade">第1話だけ読んでみてください。</p>
     </div>
   </div>
 
   <div class="bottom">
+    <!-- ★★行き先は中継の中にある＝中継を通すと、どちらのボタンが何回押されたかが Cloudflare に残る -->
     <nav class="doors">
-      <a class="door soon" id="kakuyomu" href="#">カクヨムの本棚へ<br><span class="when">8月20日から</span></a>
-      <a class="door soon" id="estar" href="#">エブリスタの掲示板へ<br><span class="when">8月20日から</span></a>
+      <a class="door" href="../go/tana-kakuyomu.html" target="_blank" rel="noopener">カクヨムの本棚へ</a>
+      <a class="door" href="../go/tana-estar.html" target="_blank" rel="noopener">エブリスタの掲示板へ</a>
     </nav>
 
     <p class="note">
@@ -251,26 +262,28 @@
     </p>
   </div>
 
-  <p class="foot"><a href="../">僕の世界</a></p>
+  <a class="more" id="more" href="#past" hidden>これまでの棚 ↓</a>
 </main>
 
+<!-- 差し込み: これまでの棚 -->
+<section class="past" id="past">
+  <h2 class="past-title">これまでの棚</h2>
+  <div class="shelf">
+    <p class="shelf-name">1冊目の棚</p>
+    <p class="shelf-when">2026年8月20日 〜 11月19日</p>
+    <p class="shelf-count">最高<span class="big">109</span>作が並びました</p>
+    <p class="shelf-sub">入れてくださった作品は、合わせて177作。</p>
+    <p class="shelf-sub">主催が第1話を読んで紹介したのは60作です。</p>
+    <a class="door ghost" href="https://kakuyomu.jp/user_events/2912051606666276508" target="_blank" rel="noopener">1冊目の棚を見る（カクヨム）</a>
+  </div>
+</section>
+<!-- /差し込み: これまでの棚 -->
+
+<p class="foot"><a href="../">僕の世界</a></p>
+
 <script>
-  // ★上の「リンク」に入れたURLを、そのままボタンへ流し込むだけ。
-  //   空のときは何もしない＝「準備中」の見た目のまま。
-  (function () {
-    const 差す = (id, url) => {
-      const a = document.getElementById(id);
-      if (!a || !url) return;
-      a.href = url;
-      a.classList.remove("soon");
-      a.target = "_blank";
-      a.rel = "noopener";
-      const w = a.querySelector(".when");
-      if (w) w.remove();
-    };
-    差す("kakuyomu", リンク.カクヨム);
-    差す("estar", リンク.エブリスタ);
-  })();
+  // ★「これまでの棚」が在るときだけ、1画面目の下に案内を出す（前の棚が無い間は差し込みが空になる）
+  if (document.getElementById("past")) document.getElementById("more").hidden = false;
 
   // ★★保険＝**一文が一行に収まっているか、その機種の字で測って確かめる。**
   //   上のCSSは「1文字＝1em」で見積もっているが、丸ゴシックが無い機種では
